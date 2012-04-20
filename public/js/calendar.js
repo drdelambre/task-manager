@@ -79,10 +79,10 @@ drdelambre.calendar.Calendar = new drdelambre.class({
 	animate : function(date, isReset){
 		var direction = null;
 		if(!isReset){
-			if(date < this.date.getTime()/1000) direction = 'right';
+			if(date < this.options.date.getTime()/1000) direction = 'right';
 			else direction = 'left';
 		}
-		date = this.date = new Date(date * 1000);
+		date = this.options.date = new Date(date * 1000);
 		var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 		var oMon = this.element.find('div.cal-nav div.cal-month');
 		var off = oMon.position();
@@ -153,7 +153,7 @@ drdelambre.calendar.Calendar = new drdelambre.class({
 		}, this)});
 	},
 	nextMonth : function(evt){
-		var date = new Date(this.date.getTime());
+		var date = new Date(this.options.date.getTime());
 		if(date.getMonth() == 11){
 			date.setMonth(0);
 			date.setYear(date.getFullYear() + 1);
@@ -164,7 +164,7 @@ drdelambre.calendar.Calendar = new drdelambre.class({
 		drdelambre.publish('/calendar/monthchange', [(date.getTime()/1000)&~0]);
 	},
 	prevMonth : function(evt){
-		var date = new Date(this.date.getTime());
+		var date = new Date(this.options.date.getTime());
 		if(date.getMonth() == 0){
 			date.setMonth(11);
 			date.setYear(date.getFullYear() - 1);
@@ -175,7 +175,7 @@ drdelambre.calendar.Calendar = new drdelambre.class({
 	},
 	resetMonth : function(evt){
 		var nDate = new Date();
-		if(this.date.getFullYear() == nDate.getFullYear() && this.date.getMonth() == nDate.getMonth()) return;
+		if(this.options.date.getFullYear() == nDate.getFullYear() && this.options.date.getMonth() == nDate.getMonth()) return;
 		drdelambre.publish('/calendar/monthchange', [(nDate.getTime()/1000)&~0, true]);
 	},
 	selectDay : function(evt){
@@ -190,8 +190,8 @@ drdelambre.calendar.Calendar = new drdelambre.class({
 		var week = $(elem).closest('div.cal-week');
 		ni += week.prevAll('div.cal-week').find('div.cal-day').length - week.prevAll('div.cal-week').find('div.cal-null').length;
 
-		this.date.setDate(ni);
-		var date = ((this.date.getTime()/86400000)&~0)*86400 + this.date.getTimezoneOffset()*60;
+		this.options.date.setDate(ni);
+		var date = ((this.options.date.getTime()/86400000)&~0)*86400 + this.options.date.getTimezoneOffset()*60;
 
 		drdelambre.publish('/calendar/daychange', [date]);
 	},
