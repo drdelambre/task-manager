@@ -1,0 +1,131 @@
+.list {
+	text-align: left;
+	margin-bottom: 1em
+}
+
+.list .header {
+	font-size: 1.4em;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+	padding-left: 0.4em;
+}
+
+.list.dead .header {
+	color: rgba(0,0,0,0.5)
+}
+
+.list.hidden .header {
+	border-bottom: none
+}
+
+.list .header .button {
+	float: right;
+	font-family: cursiv;
+	color: #fff;
+	padding: 0.2em;
+	font-size: 0.9em;
+	text-shadow: 0 0 0.25em rgba(0,0,0,0.4);
+	line-height: 0.8em;
+	cursor: pointer
+}
+
+.list .files {
+	margin: 0 1em;
+	overflow: hidden;
+}
+
+.list .file {
+	display: inline-block;
+	margin: 0.5em;
+}
+
+.list .icon-wrap {
+	position: relative;
+	height: 5em;
+	-webkit-transform: rotate(-45deg);
+	width: 4em;
+	overflow: hidden;
+	display: inline-block;
+
+    margin-left: -0.8em;
+    margin-top: -0.2em;
+    margin-bottom: -1.42em;
+    margin-right: -0.3em;
+}
+
+.list .icon {
+	background: #fff;
+	width: 2.7em;
+	height: 3.5em;
+	border-radius: 0.4em;
+	display: inline-block;
+	text-decoration: none;
+	color: #333;
+
+	-webkit-transform: rotate(45deg);
+	position: absolute;
+	right: 0;
+	top: 0.7em;
+	cursor: pointer;
+}
+
+.list .icon:before {
+	content: '';
+	position: absolute;
+	width: 2.7em;
+	height: 3.5em;
+	border-radius: 0.4em;
+	box-shadow: 0 0 5px rgba(0,0,0,0.6);
+	display: inline-block;
+	top: -2.4em;
+	right: -1.6em;
+}
+
+.list .icon .mime {
+	position: absolute;
+	left: 0;
+	bottom: 0.8em;
+	box-sizing: border-box;
+	padding: 0.1em 0.5em;
+	background: #00bfff;
+	text-align: right;
+	margin-left: -0.3em;
+	font-size: 0.8em;
+	box-shadow: 0 0 5px rgba(0,0,0,0.4);
+	border-radius: 0 0.3em 0.3em 0;
+	border-left: 0.08em solid #00a4db;
+}
+
+.list .icon .mime:after {
+	content: '';
+	position: absolute;
+	border-style: solid;
+	border-color: transparent;
+	border-width: 0 0.3em 0.2em 0;
+	border-right-color: #005d7a;
+	left: -0.1em;
+	bottom: -0.2em;
+}
+
+.list .file-info {
+	display: inline-block;
+	margin-left: 0.1em;
+	position: relative;
+	bottom: 0.2em;
+}
+
+.list .file .row {
+	font-size: 0.7em;
+	color: rgba(0,0,0,0.5);
+	width: 10em;
+	white-space: nowrap;
+	overflow: hidden
+}
+
+.list .file .row span {
+	width: 3.5em;
+	text-align: right;
+	color: rgba(0,0,0,0.7);
+	font-weight: bold;
+	display: inline-block;
+	margin-right: 0.4em
+}

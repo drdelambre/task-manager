@@ -1,0 +1,201 @@
+#sorter {
+	width: 35em;
+	position: absolute;
+	left: 50%;
+	margin-left: -17.5em;
+	bottom: 2em;
+}
+
+#hours {
+	float: right;
+	margin-left: 1em;
+	margin-top: 0.3em;
+	font-family: cursiv;
+}
+
+#hours .hour {
+	font-size: 1.6em;
+	line-height: 0.8em;
+}
+
+#hours .title {
+    line-height: 0.8em;
+    color: rgba(0,0,0,0.6);
+}
+
+#window-wrap { overflow: hidden }
+
+#pay-window {
+	width: 100%;
+	height: 2.6em;
+	border-radius: 0.5em;
+	box-sizing: border-box;
+	background-color: rgba(0,0,0,0.2);
+	box-shadow: inset 0 2px 5px rgba(0,0,0,0.6);
+	position: relative;
+}
+
+#pay-window .rows,
+#pay-window .date-marker,
+#pay-window .dates,
+#pay-window canvas {
+	width: 100%;
+	height: 2.6em;
+	position: absolute;
+	top: 0;
+	border-radius: 0.5em;
+	overflow: hidden;
+}
+
+#pay-window .dates .slide {
+	z-index: 2;
+	float: left;
+	position: relative;
+	white-space: nowrap;
+}
+
+
+#pay-window .row {
+	box-sizing: border-box;
+	height:20%;
+	border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+#pay-window .date-marker .entry {
+	width: 5em;
+	float: left;
+	font-size: 0.8em;
+	box-sizing: border-box;
+	height: 3.3em;
+	border-right: 1px solid rgba(255,255,255,0.2);
+}
+
+#pay-window .dates .entry {
+	width: 5em;
+	display: inline-block;
+	font-size: 0.8em;
+	text-shadow: 1px 0 2px #000;
+	color: rgba(255,255,255,0.8);
+	font-family: cursiv;
+	line-height: 0.8em;
+	padding:0.2em 0;
+	cursor:pointer;
+	text-align: center;
+}
+
+#pay-window .dates .entry:active {
+	color: #00bfff;
+}
+
+#pay-window .selection {
+	position: relative;
+	cursor: move;
+	width: 50%;
+	left: 10%;
+}
+
+#pay-window .handle {
+	height: 1.5em;
+	width: 0.3em;
+	position: absolute;
+	top: 0.6em;
+	left: -0.15em;
+	border-radius: 0.5em;
+	background: rgba(200, 200, 200, 0.8);
+	box-sizing: border-box;
+	padding: 0.45em 0;
+	box-shadow: 0 0 5px rgba(0,0,0,0.6), inset 1px 0 3px rgba(255,255,255,0.8);
+	z-index: 2;
+	cursor: col-resize
+}
+
+#pay-window .handle.right {
+	box-shadow: 0 0 5px rgba(0,0,0,0.6), inset -1px 0 3px rgba(255,255,255,0.8);
+	left: auto;
+	right: -0.15em;
+}
+
+#pay-window .handle span {
+	width: 0.3em;
+	height: 0.15em;
+	border-radius:0.15em;
+	display: block;
+	margin: 0.1em 0;
+	box-shadow: inset 1px 1px 3px rgba(0,0,0,0.5)
+}
+
+#pay-window .shadow {
+	height: 2.6em;
+	background: rgba(0,0,0,0.4);
+	width:100%;
+	position: relative;
+}
+
+#pay-window div.canvas .entry {
+	width: 2%;
+	background: #0f0;
+	position: absolute;
+	bottom: 0;
+}
+
+.date-select {
+	font-family: cursiv;
+	font-size: 0.8em;
+	color: rgba(0,0,0,0.4)
+}
+
+.date-entry {
+	width: 7em;
+	border: 1px solid rgba(0,0,0,0.2);
+	text-align: center;
+	border-radius: 0.5em;
+	color: #000;
+	-webkit-appearrance: none;
+	outline: 0;
+	background: none
+}
+
+.date-select.selected { color: rgba(0,0,0,0.5) }
+
+.date-select.selected .date-entry {
+	border: none;
+	box-shadow: inset 0 1px 3px rgba(0,0,0,0.4)
+}
+
+#times {
+	padding: 0.5em 1em;
+	background: #fff;
+	border-radius: 0.5em;
+	position: absolute;
+	width: 35em;
+	left: 50%;
+	margin-left: -17.5em;
+	bottom: 6.5em;
+	box-shadow: inset 0 2px 5px rgba(0,0,0,0.4);
+	box-sizing: border-box;
+}
+
+#times .entry {
+	overflow:hidden;
+	clear: both;
+	text-align: left;
+	margin: 0.4em 0;
+}
+
+#times .entry .hours {
+	float: left;
+	text-align: center;
+	margin-right: 0.5em;
+}
+
+#times .entry .hours .title {
+	font-size: 0.7em;
+	margin: -0.3em 0;
+	color: #888;
+}
+
+#times .entry .notes {
+	overflow: hidden;
+	color: #333;
+	font-size: 0.9em
+}

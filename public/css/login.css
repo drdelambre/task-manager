@@ -1,0 +1,233 @@
+#content-wrap {
+	background: url(../images/black-linen.png);
+	text-align:center;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	overflow: hidden;
+	z-index: 2;
+}
+
+#login {
+	margin: 0 auto;
+	position: absolute;
+	bottom:2em;
+	right: 5em;
+	width: 30em;
+	background: #fffada;
+	padding: 1em 1em 0.5em;
+	border-radius: 1em;
+	font-family: sans-serif;
+	z-index: 2;
+	border: 0.15em solid #E0c580;
+}
+
+#login:before {
+	content:"";
+	position: absolute;
+	border: 1.2em solid #aa1b1b;
+	border: 1.2em solid #0097c9;
+	border-left-color: transparent;
+	left: -2.5em;
+	top: 1.4em;
+	z-index:-1
+}
+
+#login:after {
+	content:"";
+	position: absolute;
+	border: 1.2em solid #aa1b1b;
+	border: 1.2em solid #0097c9;
+	border-right-color: transparent;
+	right: -2.5em;
+	top: 1.4em;
+	z-index:-1
+}
+
+#login-wrap {
+	position:relative;
+	background: #00bfff;
+	margin: 0 -0.95em;
+	padding: 0 0.95em;
+	border-right: 0.075em solid #00a4db;
+	border-left: 0.075em solid #00a4db;
+	box-shadow: 0 1px 5px rgba(0,0,0,0.6);
+	font-family: cursiv;
+	font-size:2em;
+	color: #fff;
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.25), 0 1px 0 rgba(255,255,255,0.4);
+	text-align: right;
+	border-radius: 0.1em;
+}
+
+#login-wrap:before {
+	content:"";
+	position: absolute;
+	border-style: solid;
+	border-color: transparent;
+	border-width: 0 0.35em 0.1em 0;
+	border-right-color: #005d7a;
+	left: -0.05em;
+	bottom: -0.1em;
+}
+
+#login-wrap:after {
+	content:"";
+	position: absolute;
+	border-style: solid;
+	border-color: transparent;
+	border-width: 0 0 0.1em 0.35em;
+	border-left-color: #005d7a;
+	right: -0.05em;
+	bottom: -0.1em;
+}
+
+#login-entry {
+	margin: 0 2em 0 3em;
+	position: relative;
+}
+
+#login-speak {
+	margin: 1em 0 0.5em;
+	text-align:center;
+	font-size: 0.8em;
+	color: #888;
+}
+
+#login .row {
+	clear: both;
+	margin: 0.2em 0;
+}
+
+#login .row .title {
+	float: left;
+	font-family: cursiv;
+	margin-right: 0.5em;
+	text-align: right;
+	width: 4em;
+	color: #E0c580;
+	padding: 0.2em 0;
+}
+
+#login .button {
+	font-family: cursiv;
+	background: #00bfff;
+	color: #fff;
+	border-radius: 0.5em;
+	padding: 0.2em 0.7em;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.6);
+	position: relative;
+	float: right;
+	font-size: 1.6em;
+	border: 0.1em solid #00a4db;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25), 0 1px 0 rgba(255, 255, 255, 0.4);
+	cursor: pointer;
+	margin: 0.25em;
+	margin-right: 0.8em;
+	overflow: hidden;
+}
+
+#login .button span span {
+	position: relative;
+	z-index: 2;
+	display:inline-block;
+	margin-left: -0.4em;
+}
+
+#login .button span span.back {
+	z-index: 1;
+	color: #00a4db;
+	text-shadow:none;
+	font-size: 3em;
+	margin-left: -0.45em;
+	margin-right: -0.3em;
+	line-height: 0.3em;
+	top: -0.1em;
+}
+
+#login .sign {
+	position: absolute;
+	font-family: cursiv;
+	font-size: 0.8em;
+	cursor: pointer;
+	text-align: center;
+	-webkit-transform-origin: 100% 100%;
+	-webkit-transform: rotate(-90deg);
+	-moz-transform-origin: 100% 100%;
+	-moz-transform: rotate(-90deg);
+	right: 0;
+	top: 1.3em;
+	color: #E0c580;
+}
+
+#login .sign:hover {
+	color: #000;
+}
+
+#login .input-wrap.invalid input,
+#login .input-wrap.invalid textarea {
+	color: rgba(0,0,0,0.1);
+	box-shadow: inset 0 1px 5px rgba(0,0,0,0.4);
+	background: #f4ebb7;
+}
+
+#login .input-wrap.invalid .errors {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	color:#c1a460;
+	z-index: 3;
+	top: 0.35em;
+	left: 0;
+}
+
+#watermark {
+	font-family: cursiv;
+	color: #1f1f1f;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.6), 0 1px 0 rgba(255, 255, 255, 0.05);
+	position: absolute;
+	bottom: 0.5em;
+	left: 0.5em;
+	font-size: 3em;
+}
+
+#notice {
+	text-align: left;
+	margin-top: 1em;
+	font-size: 0.8em;
+}
+
+#notice h1 {
+	color: #e0e0e0;
+	margin: 0;
+	margin-bottom: 0.2em;
+	padding: 0 0.3em;
+	float:left;
+	font-size: 1.3em;
+	position: relative;
+	bottom: 0.25em;
+}
+
+#notice div {
+	color: #383838;
+	padding: 0 1em;
+}
+
+#notice a {
+	text-decoration: none;
+	font-weight: bold;
+	color: #484848;
+}
+
+#loading {
+	position: absolute;
+	font-family: cursiv;
+	font-size: 2em;
+	color: #fff;
+	width: 7em;
+	left: 50%;
+	margin-left: -3.5em;
+	top: 50%;
+	margin-top: -0.5em;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.6), 0 1px 0 rgba(255, 255, 255, 0.3);
+}

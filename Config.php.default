@@ -1,0 +1,42 @@
+<?php
+
+// Enable debugging features - disabling this removes a lot of error checking
+define("DEBUG_MODE", 1);
+
+// Treat warnings as fatal errors
+define("WARNINGS_AS_ERRORS", 0);
+
+// Treat notices as fatal errors
+define("NOTICES_AS_ERRORS", 0);
+
+// Server hostname for generating absolute URLs
+define("PROJECT_HOST", "localhost");
+
+// This must equal the base URL for this project
+define("PROJECT_BASE_URL", "/");
+define("PROJECT_TITLE", "untitled");
+
+// Automatically detect the root path
+define("PROJECT_ROOT_PATH", dirname(__FILE__));
+
+// Where is Smarty located (necessary to use TemplateResponse)
+define("SMARTY_PATH", PROJECT_ROOT_PATH . '/smarty/');
+define("SMARTY_DEBUGGING", false);
+
+// Database info
+define("DATABASE_HOSTNAME", "localhost");
+define("DATABASE_USERNAME", "root");
+define("DATABASE_PASSWORD", "");
+define("DATABASE_NAME", "task");
+
+// Page title base
+define("PAGE_TITLE_BASE", "task manager");
+
+//Web master email
+define("WEB_ADMIN_EMAIL", "drdelambre@gmail.com");
+
+define("SESS_NAME", "tasks");
+
+require_once("include/Core.php");
+
+?>

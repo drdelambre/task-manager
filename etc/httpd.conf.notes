@@ -1,0 +1,15 @@
+Alias / "/Library/WebServer/task-manager/public"
+<Directory "/Library/WebServer/task-manager/public">
+	Options Indexes MultiViews +FollowSymLinks
+	RewriteEngine on
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule (.*)\??(.*) /index.php
+	Order allow,deny
+	Allow from all
+
+	SetOutputFilter DEFLATE
+	BrowserMatch ^Mozilla/4 gzip-only-text/html
+	BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+	SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png|ico)$ no-gzip dont-vary
+	Header append Vary User-Agent env=!dont-vary
+</Directory>

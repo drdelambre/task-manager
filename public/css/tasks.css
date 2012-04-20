@@ -1,0 +1,776 @@
+#add-list {
+	color: rgba(0,0,0,0.5);
+	font-size: 1.1em;
+	font-family: cursiv;
+	cursor: pointer;
+	margin: 0 auto;
+	text-align: right;
+	float: right;
+}
+
+#lists {
+	clear: both;
+	text-align: left
+}
+#spacer { height: 1.2em; width: 100%; }
+
+.list {
+	margin: 0 0 1em;
+	text-align: left
+}
+
+.list .button { float: left }
+
+.list-edit {
+	background: #fff;
+	border-radius: 1em;
+	padding: 1em 1em 0.5em;
+	margin: 1em auto;
+	width: 28.5em;
+	border: 0.35em solid;
+	box-shadow: 0 0 6px rgba(0,0,0,0.6);
+	position:relative
+}
+
+.list-edit:before,
+.list-edit:after {
+	content:'';
+	z-index: -1;
+	position: absolute;
+	left: 0.8em;
+	bottom:0.9em;
+	width: 70%;
+	max-width: 20em;
+	height: 55%;
+	box-shadow: 0 8px 16px rgba(0,0,0,1);
+	-webkit-transform: skew(-10deg) rotate(-5deg)
+}
+
+.list-edit:after {
+	left: auto;
+	right: 0.8em;
+	-webkit-transform: skew(10deg) rotate(6deg)
+}
+
+.list-edit .bottom-box {
+	font-size: 0.8em;
+	clear: both;
+	margin-left: 1.7em;
+	color: #ddd;
+	font-family: cursiv
+}
+
+.list-edit .desc-wrap,
+.list-edit .desc-wrap.active {
+	margin: 0.5em 0;
+	padding:0;
+	border-bottom: none;
+	clear: both
+}
+
+.list-edit .desc-wrap textarea {
+	box-shadow:none;
+	height: 4em;
+	border: 1px solid rgba(0,0,0,0.1)
+}
+
+.list-edit .desc-wrap.active .txt-title { color: rgba(0,0,0,0.6) }
+
+.list-edit .desc-wrap.active textarea {
+	border: none;
+	border-bottom: 1px solid rgba(0,0,0,0.02);
+	box-shadow: inset 0 2px 5px rgba(0,0,0,0.2)
+}
+
+.list-edit .bottom-box .buttons .button {
+	color: #000;
+	float: right;
+	font-size: 1.4em;
+	padding-left: 0.5em;
+	cursor: pointer;
+	letter-spacing: 0.1em;
+	position: relative;
+	bottom: 0.1em
+}
+
+.list-edit .bottom-box .buttons .button.notice { color: #00BFFF }
+
+.list-edit .date-entry {
+	width: 7em;
+	border: 1px solid rgba(0,0,0,0.1);
+	text-align: center;
+	border-radius: 0.5em;
+	color: #888;
+	-webkit-appearrance: none;
+	outline: 0;
+	background: none
+}
+
+.list-edit .date-select.selected { color: rgba(0,0,0,0.5) }
+
+.list-edit .date-select.selected .date-entry {
+	border: none;
+	box-shadow: inset 0 1px 3px rgba(0,0,0,0.4)
+}
+
+.list-edit .name-title {
+	float: left;
+	font-size: 1.4em; 
+	margin-top: 0.35em;
+	padding-right: 0.5em;
+	text-align: right;
+	width: 3.45em;
+	color: rgba(0,0,0,0.6);
+	font-family: cursiv;
+	margin-left: -0.8em
+}
+
+.list-edit .name-wrap { font-size: 1.3em }
+
+.list-edit .txt-title {
+	float: left;
+	text-align: right;
+	padding-right: 0.75em;
+	color: #ddd;
+	width: 4.75em;
+	font-family: cursiv;
+ 	margin-left: -1em
+}
+
+.list-edit .invite-action {
+	margin-left: 5em;
+	margin-bottom: 0.75em;
+	font-size: 0.9em;
+}
+
+.list-edit .invite-action .button {
+	float: right;
+	font-family: cursiv;
+	font-size: 1.1em;
+	margin-left: 0.5em;
+	cursor: pointer;
+	margin-top: 0.2em;
+	color: #ddd;
+}
+
+.list-edit .user-list {
+	height: 4em;
+	border-radius: 0.5em;
+	box-shadow: inset 0 2px 5px rgba(0,0,0,0.3);
+	margin-left: 4.5em;
+	margin-bottom: 0.5em;
+	overflow: hidden;
+	padding: 0.3em 0.5em;
+}
+
+.list-edit .user-list .user {
+	overflow: hidden;
+}
+
+.list-edit .user-list .button {
+	float: right;
+	color: #00bfff;
+	font-family: cursiv;
+	line-height: 0.9em;
+	cursor: pointer
+}
+
+.list-edit .user-list .even .button { opacity: 0.9 }
+
+.list-edit .user-list .text-wrap {
+	overflow: hidden;
+	font-size: 0.9em;
+}
+
+.list-edit .user-list .even .text-wrap { color: #555 }
+
+.list-edit .invite-action input {
+	box-shadow: none;
+	border: 1px solid rgba(0,0,0,0.1);
+}
+
+.list-edit .invite-action.active .button {
+	color: #00bfff;
+}
+
+.list-edit .invite-action.active input {
+	border: none;
+	box-shadow:inset 0 2px 5px rgba(0,0,0,0.2);
+	border-bottom: 1px solid rgba(0,0,0,0.02);
+}
+
+.list .info .times {
+	color: rgba(0,0,0,0.3);
+	display: inline-block;
+	font-size: 0.7em;
+	margin: 0 0.2em
+}
+
+.list .info .times span {
+	color: rgba(0,0,0,0.4);
+	margin: 0 0.2em
+}
+
+.list .info .name {
+	font-size: 1.3em;
+	font-weight: bold;
+	color: rgba(0,0,0,0.8);
+	overflow: hidden;
+	line-height: 1em;
+	cursor: pointer;
+	margin-bottom: -0.2em
+}
+
+.list .info .name .remaining {
+	float: right;
+	margin-left: 1em;
+	margin-right: 0.2em;
+	font-size: 0.6em;
+	color: rgba(0,0,0,0.2)
+}
+
+.list.even .info .name .remaining { color: rgba(0,0,0,0.25) }
+
+.list .info .name .remaining span {
+	color: rgba(0,0,0,0.5);
+	font-size: 1.4em;
+	margin: 0 0.2em
+}
+
+.list .info .list-text {
+	margin-left: 1em;
+	color: rgba(0,0,0,0.5);
+	font-size: 0.8em;
+	font-style: italic;
+	display: inline-block;
+}
+
+.notice { color: #333 }
+
+.list .info .buttons .button {
+	float: right;
+	position: relative;
+    font-family: cursiv;
+    color: #fff;
+    text-shadow: 0 0 0.25em rgba(0,0,0,0.4);
+    font-size: 1.2em;
+    padding: 0 0.25em;
+    bottom: 0.2em;
+    cursor: pointer
+}
+
+.done {
+	clear: both;
+	color: rgba(50,50,50,0.6);
+	padding: 0.2em 0
+}
+
+.done .buttons .checkbox {
+	background: rgba(100,100,100,0.2);
+	border: 1px solid rgba(0,0,0,0.3)
+}
+
+.done .button {
+	background: none;
+	color: #aaa
+}
+
+.done .info-wrap .creator { color: #aaa }
+
+.list .active {
+	margin-right: 3em;
+	padding-bottom: 1em;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+	overflow:hidden;
+	clear: both
+}
+
+.list .active .selected .body { background: #c7f25f }
+
+.list .active .selected .checkbox { border: 0.1em solid #888 }
+
+.new-todo {
+	margin: 0.5em 0;
+	margin-right: 3em;
+	clear:both;
+	overflow: hidden;
+}
+
+.new-todo-wrap {
+	margin: 0 auto;
+	width: 28em
+}
+
+.new-todo .buttons {
+	float:right;
+	text-align: center;
+	width: 2.7em;
+	margin-left: 0.5em;
+	font-family: cursiv
+}
+
+.new-todo .buttons .button {
+	float: none;
+	letter-spacing: 0.1em;
+	cursor: pointer
+}
+
+.new-todo .buttons .button.notice {
+	color: #FFF;
+	text-shadow:0 0 0.25em rgba(0, 0, 0, 0.6)
+}
+
+.new-todo .input-wrap textarea { height: 3em }
+
+.checkbox {
+	width: 0.8em;
+	height: 0.8em;
+	margin: 0.3em;
+	border: 1px solid rgba(0,0,0,0.6);
+	background-color: #fff;
+	cursor: pointer;
+	border-radius: 0.25em
+}
+
+.entry {
+	margin-left: 2.5em;
+	clear: both;
+	font-size: 0.8em;
+	text-align:left
+}
+
+.entry .body {
+	overflow: hidden;
+	padding: 0.2em 0.5em
+}
+
+.entry .body .inputWrap textarea { height: 2em }
+
+.entry .buttons .claim {
+	float: left;
+	padding: 0.2em 0.5em;
+	color: #000;
+	cursor: pointer;
+	opacity: 0;
+	position: absolute;
+	right: 1.5em;
+	top: 0.1em;
+	font-size: 0.8em
+}
+
+.entry.done .buttons .claim { display: none }
+
+.entry .buttons .claim.selected {
+	color: #fff;
+	opacity: 1.0
+}
+
+.entry .buttons .claim.claimed {
+	color: rgba(0,0,0,0.5);
+	opacity: 1.0
+}
+
+.entry .buttons {
+	float: left;
+	margin: 0.3em 0 0.3em 0.5em;
+	position: relative
+}
+
+.entry.done .buttons {
+	margin: 0;
+	margin-left: 0.5em
+}
+
+.entry .buttons .checkbox { float: left }
+
+.entry .body .text-wrap {
+	cursor: pointer;
+	display: inline;
+	border-radius: 1em
+}
+
+.entry .body .text-wrap textarea { height: 1.6em }
+.entry .body .text-wrap .button {
+	float: right;
+	width: 3em;
+	font-family: cursiv;
+	text-align: right;
+	font-size: 1.2em;
+	color: #fff;
+	text-shadow: 0 0 0.25em rgba(0, 0, 0, 0.4)
+}
+
+.entry .body .comment {
+	display: inline-block;
+	margin-left: 1em;
+	cursor: pointer
+}
+
+.entry .body .comment img {
+	height: 1.2em;
+	opacity: 0.2;
+	position:relative;
+	top: 0.35em
+}
+
+.entry .body .comment.avail img { opacity: 0.8 }
+
+.entry .body .comment span { display: none }
+.entry .body .comment.avail span { display: inline }
+
+.entry .body .completed {
+	float: right;
+	margin-left: 1em
+}
+
+.entry .body .completed span {
+	color: rgba(0,0,0,0.6);
+	margin-left: 0.5em
+}
+
+.entry .body .completed img {
+	height: 1.2em;
+	margin-left: 0.5em;
+	float: right;
+	cursor: pointer;
+	opacity: 0.5
+}
+
+.comment-list {
+	margin: 0.5em 0 0.5em 4em;
+	padding: 0.5em;
+	padding-right: 5.5em;
+	clear: both;
+	overflow: hidden;
+}
+
+.comment-list .comments {
+	border-radius: 0.5em;
+	background: #fff;
+	overflow: hidden;
+	box-shadow: inset 0 2px 5px rgba(0,0,0,0.3);
+	padding: 0.5em
+}
+
+.comment-list .comments .comment {
+	overflow: hidden;
+	margin: 0 1em;
+	padding: 0.5em 0;
+	border-bottom: 1px solid #eee
+}
+
+.comment-list .comments .comment.timed {
+	background: rgba(0,0,0,0.05);
+	margin: -1px -0.5em 0;
+	padding: 0.2em 1.5em;
+	padding-left: 2.5em;
+	font-style: italic;
+	color: #aaa;
+	border-top: 1px solid #EEE;
+	border-bottom: 1px solid #EEE;
+	box-shadow: inset 0 0 3px rgba(0,0,0,0.02);
+}
+
+.comment-list .comments .comment.timed .hours {
+	float: left;
+	margin-right: 0.5em;
+	color: #888;
+}
+
+.comment-list .comments .comment.timed .hours span { margin-right: 0.2em }
+
+.comment-list .comments .comment.even { color: rgba(0,0,0,0.7) }
+
+.comment-list .comments .comment.last { border: none }
+
+.comment-list .comments .comment .buttons {
+	float: right;
+	margin: 0;
+	margin-left: 1em
+}
+
+.comment-list .comments .comment .buttons div {
+	color: #f00;
+	display: inline-block;
+	cursor: pointer
+}
+
+.comment-list .comments .comment .buttons img {
+	height: 1.2em;
+	margin-left: 1em;
+	cursor: pointer
+}
+
+.comment-list .comments .comment .creator {
+	float: right;
+	color: #555;
+	font-style: normal;
+	margin-left: 1em
+}
+
+.comment-list .comments .comment .creator span {
+	color: #888;
+	margin-left: 0.5em;
+	font-size: 0.8em
+}
+
+.comment-list .comments .comment .files a {
+	color: rgba(0,0,0,0.4);
+	font-size: 0.85em;
+	text-decoration: none;
+}
+
+.comment-list .new-comment { margin: 0.4em 0; }
+.comment-list .new-comment .buttons {
+	float: right;
+	width: 2.75em;
+	margin: 0;
+	margin-left: 0.3em;
+	font-size: 1.2em;
+	font-family: cursiv;
+	margin-right: -3.05em
+}
+
+.comment-list .new-comment .button {
+	float: none;
+	text-align: center;
+	cursor: pointer
+}
+
+.comment-list .new-comment .button.notice {
+	color: #fff;
+	text-shadow: 0 0 3px rgba(0,0,0,0.5)
+}
+
+.comment-list .new-comment .hours {
+	width: 5em;
+	float: left;
+	text-align: center;
+	margin-right: 0.5em;
+}
+
+.comment-list .new-comment .hours input {
+	font-size: 1.2em;
+	text-align: right;
+	border-radius: 0.35em;
+}
+
+.comment-list .new-comment .hours .title {
+	font-family: cursiv;
+	color: rgba(0,0,0,0.2);
+}
+
+.comment-list .new-comment .hours.activate .title { color: rgba(0,0,0,0.8) }
+
+.comment-list .new-comment textarea { height: 3.2em }
+.comment-list .new-comment .file-list { margin-right: 3.25em }
+
+.comment-list .new-comment .file {
+	display: inline-block;
+	color: rgba(0,0,0,0.4);
+	margin: 0 0.3em;
+	position: relative;
+	padding-bottom: 0.4em
+}
+
+.comment-list .new-comment .file .close {
+	float: right;
+	color: #000;
+	margin-left: 0.5em;
+	cursor: pointer;
+}
+
+.comment-list .new-comment .file .progress {
+	width: 50%;
+	margin: 0 25%;
+	height: 0.3em;
+	background: rgba(0, 0, 0, 0.1);
+	position: absolute;
+	bottom: 0;
+	overflow: hidden;
+	display: none
+}
+
+.comment-list .new-comment .file.loading .progress { display: block }
+
+.comment-list .new-comment .file .progress span {
+	height: 0.3em;
+	width: 0%;
+	background: rgba(0,0,0,0.4);
+	display: inline-block;
+	border-right: 3px solid rgba(255, 255, 255, 0.2)
+}
+
+.list .inactive {
+	padding-left: 2em;
+	padding-top: 1em;
+	overflow: hidden;
+	position: relative;
+	margin-right: 3em;
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	height: 7em
+}
+
+.list .inactive .entry { margin: 0 }
+
+/* =Blur
+******************************************/
+.blur #add-list,
+#add-list.blur {
+	color: transparent;
+	text-shadow: 0 0 2px rgba(0,0,0,0.8)
+}
+
+.blur .list .info .buttons .button,
+.list.blur .info .buttons .button {
+	color: transparent;
+	text-shadow: 0 0 2px rgba(255,255,255,1),0 0 0.25em rgba(0,0,0,0.4);
+}
+
+.blur .list .info .name,
+.list.blur .info .name {
+	text-shadow: 0 0 2px rgba(0,0,0,0.8);
+	color: transparent;
+}
+
+.blur .list .info .name .remaining,
+.list.blur .info .name .remaining {
+	color: transparent;
+	text-shadow: 0 0 2px rgba(0,0,0,0.3);
+}
+
+.blur .list .info .name .remaining span,
+.list.blur .info .name .remaining span {
+	color: transparent;
+	text-shadow: 0 0 2px rgba(0,0,0,0.6);
+}
+
+.blur .list .info .list-text,
+.list.blur .info .list-text {
+	color: transparent;
+	text-shadow: 0 0 2px rgba(0,0,0,0.4);
+}
+
+.blur .list .new-todo .buttons .button,
+.list.blur .new-todo .buttons .button {
+	color: transparent;
+	text-shadow: 0 0 2px rgba(0,0,0,0.8);
+}
+.blur .list .new-todo .buttons .button.notice,
+.list.blur .new-todo .buttons .button.notice {
+	color: transparent;
+	text-shadow: 0 0 2px rgba(255,255,255,1),0 0 0.25em rgba(0,0,0,0.4);
+}
+
+.blur .list .entry,
+.list.blur .entry {
+	color: transparent;
+	text-shadow: 0 0 2px rgba(0,0,0,0.8);
+}
+
+.blur .list .info .times,
+.list.blur .info .times {
+	color: transparent;
+	text-shadow: 0 0 2px rgba(0,0,0,0.2);
+}
+
+.blur .list .info .times span,
+.list.blur .info .times span {
+	color: transparent;
+	text-shadow: 0 0 2px rgba(0,0,0,0.3);
+}
+
+
+.blur .list .entry.done,
+.list.blur .entry.done {
+	text-shadow: 0 0 2px rgba(0,0,0,0.5);
+}
+
+.blur .list .entry.even .body,
+.list.blur .entry.even .body {
+	color: transparent;
+	text-shadow: 0 0 2px rgba(0,0,0,0.6);
+}
+
+
+.blur .list .entry .buttons .checkbox,
+.list.blur .entry .buttons .checkbox {
+	background: rgba(255,255,255,0.4);
+	box-shadow: 0 0 2px rgba(0,0,0,0.6), inset 0 0 1px rgba(0,0,0,0.8);
+	border: none;
+	width:1em;
+	height: 1em;
+}
+
+.blur .list .entry.done .buttons .checkbox,
+.list.blur .entry.done .buttons .checkbox {
+	background: rgba(100,100,100,0.15);
+	box-shadow: 0 0 2px rgba(0,0,0,0.4), inset 0 0 1px rgba(0,0,0,0.4);
+	border: none;
+}
+
+.blur .list .entry.done .body .completed span,
+.list.blur .entry.done .body .completed span {
+	color: transparent;
+	text-shadow: 0 0 2px rgba(0,0,0,0.6);
+}
+
+.blur .list .entry.done .body .completed img,
+.list.blur .entry.done .body .completed img {
+	opacity: 0.5;
+}
+
+.blur .list .comment-list .new-comment .button.notice,
+.list.blur .comment-list .new-comment .button.notice {
+	color: transparent;
+	text-shadow: 0 0 2px rgba(255,255,255,1),0 0 0.25em rgba(0,0,0,0.4);
+}
+
+.blur .entry .body .comment img { opacity: 0.1 }
+.blur .entry .body .comment.avail img { opacity: 0.3 }
+
+.blur .comment-list .comments {
+	background-color: rgba(255,255,255,0.8);
+	box-shadow: inset 0 1px 8px rgba(0,0,0,0.3),0 0 3px rgba(0,0,0,0.2); 
+}
+.blur .comment-list .comments .comment .creator {
+	color: transparent;
+	text-shadow: 0 0 2px rgba(0,0,0,0.6);
+}
+
+.blur .comment-list .comments .comment .creator span {
+	color: transparent;
+	text-shadow: 0 0 2px rgba(0,0,0,0.4);
+}
+
+.blur .entry .buttons .claim {
+	color: transparent;
+	text-shadow: 0 0 2px #222;
+}
+
+.blur .entry .buttons .claim.selected {
+	color: transparent;
+	text-shadow: 0 0 2px #fff;
+}
+
+.blur .entry .buttons .claim.claimed {
+	color: transparent;
+	text-shadow: 0 0 2px rgba(0,0,0,0.5);
+}
+
+
+@media screen and (max-width: 640px){
+	#todos { margin: 1em; }
+}
+
+@media screen and (min-width: 641px) and (max-width: 960px){
+	#todos { margin: 1em 0; }
+	
+	#new-list { width: 32em; }
+	#lists { font-size: 1.2em; margin: 0 }
+	
+	.list .new-todo-wrap {
+		width: auto;
+		margin: 0 2em;
+	}
+}

@@ -1,0 +1,490 @@
+/* =Calendar
+----------------------------------------------- */
+.calendar {
+	background: #333;
+	border-radius: 0.8em;
+	padding: 0.35em;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	user-select: none
+}
+
+.calendar .cal-inner {
+	background: #fff;
+	border-radius: 0.5em;
+	padding: 0.75em;
+	position: relative;
+	overflow: hidden
+}
+
+.calendar .cal-nav {
+	overflow: hidden;
+	position: relative;
+	magin: 0.5em 0
+}
+
+.calendar .cal-nav-buttons {
+	float: right;
+	font-size: 0.9em;
+	color: #555
+}
+
+.calendar .cal-nav-buttons div {
+	display: inline-block;
+	cursor: pointer
+}
+
+.calendar .cal-nav-buttons .cal-curr { margin: 0 0.5em }
+
+.calendar .cal-month {
+	font-size: 1.5em;
+	font-weight: bold
+}
+
+.calendar .cal-week,
+.calendar .cal-week-header { text-align: center }
+
+.calendar .cal-day {
+	display: inline-block;
+	width: 10.2857143%;
+	text-align: right;
+	padding: 0.5em 2% 0.5em 0;
+	margin: 0.1em 1%;
+	background-color: #f8f8f8;
+	font-size: 0.8em;
+	border-radius: 0.5em;
+	cursor: pointer
+}
+
+.calendar .cal-week-header .cal-day {
+	font-weight: bold;
+	text-align:left;
+	padding: 0 0 0 2%;
+	background: none
+}
+
+.calendar .cal-day.cal-null { color: #eee }
+
+.calendar .cal-day.cal-today {
+	color: #fff;
+	background-color: #ccc
+}
+
+.calendar .cal-day.cal-active {
+	background-color: #FDD400;
+	font-weight: bold;
+	cursor: pointer
+}
+
+.calendar .cal-day.cal-active.cal-today {
+	color: #fff;
+	background-color: #F3AF00
+}
+
+.calendar .cal-day.cal-selected { border: 1px solid #ccc; }
+.calendar .cal-day.cal-today.cal-selected { border: 1px solid #333; }
+.calendar .cal-day.cal-active.cal-selected { border: 1px solid #333; }
+.calendar .cal-day.cal-active.cal-today.cal-selected { border: 1px solid #333; }
+
+/* implementation specific =Calendar
+----------------------------------------------- */
+.calendar {
+	margin: 0.5em 0;
+	margin-right: 0.5em;
+	font-size: 0.9em;
+	position: relative;
+	box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+}
+
+.calendar:before,
+.calendar:after {
+	content:'';
+	z-index: -1;
+	position: absolute;
+	left: 0.8em;
+	bottom:0.9em;
+	width: 70%;
+	max-width: 20em;
+	height: 55%;
+	box-shadow: 0 8px 16px rgba(0,0,0,1);
+	-webkit-transform: skew(-10deg) rotate(-7deg);
+	-moz-transform: skew(-10deg) rotate(-7deg);
+}
+
+.calendar:after {
+	left: auto;
+	right: 0.8em;
+	-webkit-transform: skew(10deg) rotate(7deg);
+	-moz-transform: skew(10deg) rotate(7deg);
+}
+
+.blur .calendar {
+	background: rgba(51,51,51,0.8);
+	box-shadow: 0 0 5px rgba(0,0,0,0.8);
+}
+
+.blur .cal-inner {
+	box-shadow: inset 0 0 4px rgba(0,0,0,0.8);
+	color: transparent;
+	text-shadow: 0 0 2px rgba(0,0,0,0.8);
+}
+
+.blur .calendar .cal-day.cal-null {
+	color: transparent;
+	text-shadow: 0 0 2px rgba(200,200,200,0.8);
+}
+
+.blur .calendar .cal-day.cal-active {
+	background: rgba(253, 212, 0,0.8);
+	box-shadow: 0 0 3px rgba(253,212,0,1);
+}
+
+.blur .calendar .cal-day.cal-today {
+	color: transparent;
+	text-shadow: 0 0 2px #fff;
+}
+
+
+/* =CalendarTicker
+----------------------------------------------- */
+.calendar-ticker {
+	margin: 0 0.5em;
+	overflow: hidden
+}
+
+.calendar-ticker .cal-more-handle {
+	cursor: s-resize;
+	text-align: center;
+	margin: 0.5em 0;
+	padding 0.2em 0
+}
+
+.calendar-ticker .cal-more-handle span {
+	border-radius: 1em;
+	width: 0.4em;
+	height: 0.4em;
+	background: rgba(0,0,0,0.5);
+	display: inline-block;
+	margin: 0 0.25em
+}
+
+.calendar-ticker .cal-date {
+	margin: 0.5em 0;
+}
+
+.calendar-ticker .cal-head {
+	overflow: hidden;
+	color: rgba(0, 0, 0, 0.4);
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+	font-size: 0.8em
+}
+
+.calendar-ticker .cal-head .cal-add {
+	float: right;
+	padding: 0.2em 0.2em 0;
+	font-size: 1.5em;
+	font-weight: bold;
+	color: #000;
+	cursor: pointer
+}
+
+.calendar-ticker .cal-head h1 {
+	margin: 0;
+	display: inline-block;
+	font-size: 2em;
+	margin-right: 0.2em;
+	color: #000
+}
+
+.calendar-ticker .cal-date .cal-add-menu {
+	font-size: 0.9em;
+	margin-top: 0.5em;
+	padding-bottom: 0.5em;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+	overflow: hidden
+}
+
+.calendar-ticker .cal-date .cal-add-menu .input-wrap {
+	margin-bottom: 0.5em;
+}
+
+.calendar-ticker .cal-date .cal-add-menu .cal-time { cursor: pointer }
+
+.calendar-ticker .cal-date .cal-add-menu .cal-save {
+	text-align: center;
+	color: #E8840E;
+	cursor: pointer
+}
+
+.calendar-ticker .cal-date .cal-entry {
+	margin: 0.2em 0;
+	padding: 0.3em 0;
+	font-size: 0.9em
+}
+
+.calendar-ticker .cal-date .cal-time {
+	float: left;
+	color: rgba(0,0,0,0.6);
+	margin-top: 0.25em;
+	width: 4em;
+	text-align: right;
+	margin-right: 0.5em
+}
+
+.calendar-ticker .cal-date .cal-time span { color: rgba(0,0,0,0.4) }
+
+.calendar-ticker .cal-date .cal-entry .cal-action {
+	display: none;
+	float: right;
+	margin-top: 0.25em;
+	color: rgba(0,0,0,0.6)
+}
+
+.calendar-ticker .cal-date .cal-entry .cal-body { overflow: hidden }
+
+.calendar-ticker .cal-date .cal-entry .cal-body .project a {
+	text-decoration: none;
+	color: #E8840E;
+	font-size: 0.75em;
+	font-weight: bold;
+	display: block;
+	cursor: pointer
+}
+
+/* implementation specific =CalendarTicker
+----------------------------------------------- */
+.calendar-ticker {
+	padding-right: 0.2em;
+	font-size: 0.9em;
+}
+
+.blur .calendar-ticker .cal-more-handle span {
+	box-shadow: 0 0 4px rgba(0,0,0,0.7);
+	background: rgba(0,0,0,0.3);
+	width: 0.35em;
+	height: 0.35em;
+}
+
+.blur .calendar-ticker .cal-head {
+	color: transparent;
+	text-shadow: 0 0 2px rgba(0,0,0,0.5)
+}
+
+.blur .calendar-ticker .cal-head h1 {
+	color: transparent;
+	text-shadow: 0 0 2px rgba(0,0,0,0.8);
+}
+
+.blur .calendar-ticker .cal-head .cal-add {
+	color: transparent;
+	text-shadow: 0 0 2px rgba(0,0,0,0.8);
+}
+
+.blur .calendar-ticker .cal-date .cal-time {
+	color: transparent;
+	text-shadow: 0 0 2px rgba(0,0,0,0.6)
+}
+
+.blur .calendar-ticker .cal-date .cal-time span {
+	color: transparent;
+	text-shadow: 0 0 2px rgba(0,0,0,0.4)
+}
+
+.blur .calendar .cal-nav-buttons div {
+	color: transparent;
+}
+
+/* =DateSelector
+----------------------------------------------- */
+.date-box {
+	font-family: cursiv;
+	text-align: center;
+	clear: both;
+	margin-top: 0.5em;
+	padding-top: 0.5em;
+	border-top: 1px solid #eee;
+	overflow: hidden
+}
+
+.date-box .year,
+.date-box .month,
+.date-box .day {
+	position: relative;
+	overflow: hidden;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	user-select: none
+}
+
+.date-box .year-wrap,
+.date-box .month-wrap,
+.date-box .day-wrap {
+	text-align: left;
+	position: relative;
+	white-space: nowrap
+}
+
+.date-box .year span {
+	font-size: 1.5em;
+	display: inline-block;
+	margin: 0 0.4em;
+	padding: 0 0.2em;
+	color: rgba(0,0,0,0.1);
+	cursor: pointer
+}
+
+.date-box .year .selected {
+	color: #000;
+	font-size: 1.6em
+}
+
+.date-box .month span {
+	margin: 0 0.2em;
+	padding: 0 0.2em;
+	color: rgba(0,0,0,0.1);
+	font-size: 1.3em;
+	cursor: pointer
+}
+
+.date-box .month .selected {
+	color: #000;
+	font-size: 1.4em
+}
+
+.date-box .day span {
+	display: inline-block;
+	color: rgba(0,0,0,0.1);
+	font-size: 1.2em;
+	margin: 0 0.2em;
+	padding: 0 0.2em;
+	cursor: pointer
+}
+
+.date-box .day span div {
+	margin-top: -0.65em;
+	color: rgba(0,0,0,0.1);
+	font-size: 0.8em
+}
+
+.date-box .day .selected { color: #000 }
+
+.date-box .day .selected div { color: rgba(0,0,0,0.5) }
+
+
+/* =TimePicker
+----------------------------------------------- */
+.time-picker {
+	white-space: nowrap;
+	margin: 0.1em 0 0;
+	overflow: hidden;
+}
+
+.time-picker .slider {
+	width: 100%;
+	border-radius: 1em;
+	height: 0.6em;
+	margin-top: 0.2em;
+	background-color: rgba(0,0,0,0.1);
+	position: relative;
+	box-shadow: inset 0 1px 3px rgba(0,0,0,0.4)
+}
+
+.time-picker .slider .slide-handle {
+	position: absolute;
+	left: 0;
+	top: -0.25em;
+	height: 0.5em;
+	width: 0.5em;
+	border-radius: 0.5em;
+	background: rgba(255,255,255,0.8);
+	border: 0.3em solid #fff;
+	box-shadow: 0 0 5px rgba(0,0,0,0.3)
+}
+
+.time-picker .meridian {
+	display: inline-block;
+	width: 50%;
+	text-align: center;
+	font-size: 0.7em;
+	color: rgba(0,0,0,0.5)
+}
+
+
+@media screen and (max-width: 640px){
+	.calendar {
+		margin: 0;
+		padding: 0.3em 0;
+		border-radius: 0;
+	}
+	
+	.calendar .cal-inner {
+		border-radius: 0;
+		padding: 1em 3em;
+		text-align: center;
+	}
+
+	.calendar .cal-inner .cal-nav {
+		width: 18em;
+		margin: 0 auto;
+		text-align: left;
+	}
+
+	.calendar .cal-inner .cal-week,
+	.calendar .cal-inner .cal-week-header {
+		width: 20em;
+		margin: 0 auto;
+	}
+	
+	.calendar-ticker {
+		margin: 0;
+		padding: 0.5em 0;
+		white-space: nowrap;
+		overflow-x: auto;
+		overflow-y: hidden
+	}
+
+	.calendar-ticker .cal-date {
+		display: inline-block;
+		vertical-align: top;
+		margin: 0 0.5em;
+		font-size: 0.9em;
+		width: 18em;
+		white-space: normal;
+	}
+
+	.calendar-ticker .cal-date .cal-head {
+		font-size: 0.7em;
+	}
+
+	.calendar-ticker .cal-more {
+		margin: 0 0.5em;
+		display:inline-block;
+		vertical-align: middle;
+		overflow: hidden;
+	}
+
+	.calendar-ticker .cal-more-inner { display: inline-block }
+
+	.calendar-ticker .cal-more-handle {
+		display: inline-block;
+		cursor: e-resize;
+		margin: 0 1em;
+	}
+	.calendar-ticker .cal-more-handle span {
+		display: block;
+		margin: 0.5em 0;
+	}
+}
+
+@media screen and (max-width: 640px){
+	.calendar:before,
+	.calendar:after {
+		display:none
+	}
+}
+
+@media screen and (min-width: 641px) and (max-width: 960px){
+	.calendar {
+		font-size: 1.2em;
+	}
+}

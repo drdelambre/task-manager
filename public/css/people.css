@@ -1,0 +1,345 @@
+#search {
+	text-align: right;
+	margin-bottom: 1em;
+	position: relative;
+}
+
+#search .title {
+	display: inline-block;
+	color: rgba(0, 0, 0, 0.5);
+	font-family: cursiv;
+	font-size: 1.2em;
+	position: relative;
+	top: 0.2em;
+	margin-right: 0.3em;
+}
+
+#search .input-wrap {
+	width: 20em;
+	display: inline-block;
+	z-index: 3;
+}
+
+#autocomplete {
+	width: 19.6em;
+	position: absolute;
+	right: 0.2em;
+	background: rgba(0, 0, 0, 0.6);
+	top: 1.3em;
+	z-index: 2;
+	text-align: left;
+	padding-top: 0.8em;
+	border-radius: 0 0 0.5em 0.5em;
+	color: #fff;
+	overflow: hidden
+}
+
+#autocomplete .entry {
+	padding: 0.2em 0.5em;
+	border-radius: 0.5em;
+	cursor: pointer
+}
+
+#autocomplete .entry.selected { background: #00bfff }
+
+#autocomplete .entry.empty {
+	color: #00bfff;
+	text-align: center;
+}
+
+#autocomplete .last {
+	padding: 0.2em 0;
+	margin-top: 0.5em;
+	border-top: 1px solid rgba(0,0,0,0.2);
+	text-align: center;
+	color: rgba(255,255,255,0.8);
+	background: rgba(0,0,0,0.2);
+	font-family: cursiv;
+	letter-spacing 0.2em;
+	line-height: 0.8em;
+	padding-bottom: 0.4em;
+	border-radius: 0 0 0.5em 0.5em;
+}
+
+#add-user .front span {
+	font-family: cursiv;
+	font-size: 4.5em;
+	color: #00bfff;
+	line-height: 0.5em;
+	position: relative;
+	left: 0.2em;
+	top: 0.1em;
+}
+
+#add-user .back { padding: 0 0.5em }
+#add-user.selected .back { top: -2em }
+
+#add-user .back .header {
+	font-family: cursiv;
+	text-align: right;
+	font-size: 1.1em;
+	color: #00bfff;
+	cursor: default;
+	margin-bottom: 0.5em;
+	padding-bottom: 0.1em
+}
+
+#add-user .back .title {
+	font-size: 0.8em;
+	color: rgba(0,0,0,0.5)
+}
+
+.user-wrap .back .footer {
+	margin-top: 1em;
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	padding: 0.2em;
+	padding-bottom: 0;
+	text-align: center;
+}
+
+.user-wrap .back .footer .button {
+	display: inline-block;
+	padding: 0 0.2em;
+	margin: 0 0.2em;
+	font-family: cursiv;
+	cursor: pointer
+}
+
+.user-wrap .back .footer .button.notice {
+	color: #00bfff;
+}
+
+.user {
+	width: 14em;
+	height: 4em;
+	display: inline-block;
+	position: relative;
+	margin: 0.25em;
+	-webkit-perspective: 800px;
+	-moz-perspective: 800px;
+	-ms-perspective: 800px;
+	-o-perspective: 800px;
+	perspective: 800px;
+	-webkit-transition: all 0.75s;
+	font-size: 0.9em;
+}
+
+.user.selected {
+	z-index: 3;
+}
+
+.user-wrap {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	-webkit-transition: -webkit-transform 1s;
+	-webkit-transition: all 0.75s;
+	-moz-transition: -moz-transform 1s;
+	-ms-transition: -ms-transform 1s;
+	-o-transition: -o-transform 1s;
+	transition: transform 1s;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.selected .user-wrap {
+	-webkit-transform: rotateY( 180deg );
+	-moz-transform: rotateY( 180deg );
+	-ms-transform: rotateY( 180deg );
+	-o-transform: rotateY( 180deg );
+	transform: rotateY( 180deg );
+}
+
+.user-wrap .front,
+.user-wrap .back {
+	display: block;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	box-sizing: border-box;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+#add-user .add,
+.user-wrap img.avatar {
+	height: 4em;
+	width: 4em;
+	border-radius: 0.5em 0 0 0.5em;
+	background: #fff;
+}
+
+.user-wrap img.contact {
+	float: left;
+	margin-right: 0.5em;
+	position: relative;
+	top: -0.25em;
+	width: 2em
+}
+
+.user-wrap .front {
+	background: rgba(0,0,0,0.4);
+	box-shadow: inset 0 2px 5px rgba(0,0,0,0.3);
+	border-radius: 0.5em;
+	text-align:left;
+	cursor: pointer;
+	z-index: 1;
+	overflow:hidden;
+}
+
+.user-wrap .front .header {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	text-align: right;
+	z-index: 2;
+	color: #fff;
+	padding: 0.2em 0.5em;
+	width: 10em;
+}
+
+.user-wrap .front .header .name {
+}
+
+.user-wrap .front .header .email {
+	font-size: 0.8em;
+	color: rgba(255,255,255,0.4)
+}
+
+.user-wrap .back {
+	border-radius: 0.5em;
+	border: 3px solid #222;
+	background: #fff;
+	padding: 0.5em;
+	-webkit-transform: rotateY(180deg);
+/*	z-index: 1; */
+	text-align: left;
+	height: auto;
+	-webkit-transition: all 0.75s;
+}
+
+.selected .user-wrap .back { top: -3em }
+
+.user-wrap .back .header {
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+	padding: 0.2em;
+	cursor: pointer;
+	overflow: hidden
+}
+
+.user-wrap .back .header .name {
+	color: #000;
+	line-height: 0.8em;
+}
+
+.user-wrap .back .header .email {
+	font-size: 0.8em;
+	color: rgba(0,0,0,0.4)
+}
+
+.user-wrap .toggle {
+	border-top: 1px solid rgba(0, 0, 0, 0.03);
+	font-size: 0.75em;
+	text-align: center;
+	color: rgba(0,0,0,0.3);
+	margin-bottom: 0.3em
+}
+
+.user-wrap .toggle .button {
+	display: inline-block;
+	padding: 0 0.4em;
+	border-right: 1px solid rgba(0,0,0,0.1);
+	line-height: 0.9em;
+	cursor: pointer;
+}
+
+.user-wrap .toggle .button.last { border: none }
+.user-wrap .toggle .button.selected { color: rgba(0,0,0,0.8) }
+
+.user-wrap div.contact {
+	overflow: hidden;
+	clear: both;
+}
+
+.user-wrap .back div.contact .add-btn {
+	text-align: center;
+	color: #00bfff;
+	font-family: cursiv;
+	cursor: pointer
+}
+
+.user-wrap .back div.contact .add-more .input-wrap { margin-top: 0.2em }
+
+.user-wrap .info .title {
+	font-size: 0.8em;
+	color: rgba(0,0,0,0.4);
+	margin-top: 0.5em;
+	line-height: 0.9em
+}
+
+.user-wrap .info .text {
+	margin-left: 1.5em
+}
+
+.user-wrap .add-more {
+	overflow: hidden;
+	clear: both;
+}
+
+.user-wrap .lists {
+	height: 8em;
+	overflow: hidden;
+}
+
+.user-wrap .lists .list {
+	cursor: pointer
+}
+
+.user.blur .user-wrap {
+	opacity: 0.5;
+}
+
+.user.blur img.avatar {
+	opacity: 0.3;
+	box-shadow: none;
+}
+
+.user.blur .user-wrap .front {
+	box-shadow: none;
+}
+
+#add-user.blur .front .add span {
+	color: transparent;
+	text-shadow: 0 0 2px #00bfff;
+}
+
+#add-user.blur:hover .front .add span {
+	color: #00bfff;
+	text-shadow: none;
+}
+
+.user.blur .header {
+	color: transparent;
+	text-shadow: 0 0 2px #fff
+}
+
+.user.blur:hover .header {
+	color: #fff;
+	text-shadow: none;
+}
+
+.user.blur .header .email {
+	color: transparent;
+	text-shadow: 0 0 2px rgba(255,255,255,0.4)
+}
+
+.user.blur:hover .header .email {
+	text-shadow: none;
+	color: rgba(255,255,255,0.4);
+}

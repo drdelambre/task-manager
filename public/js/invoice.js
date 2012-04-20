@@ -1,0 +1,4 @@
+drdelambre.invoice = {
+	init: function(){
+	}
+};
